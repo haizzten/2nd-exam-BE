@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyExam.Models
 {
-    public class Agreement
+    public class AgreementModel
     {
         [Key]
         public string ID { get; set; }
@@ -17,7 +17,7 @@ namespace MyExam.Models
         public DateTime CreatedDate { get; set; }
 
         [NotMapped]
-        public string DaysUntilExpiration { get => ExpirationDate.Subtract(DateTime.Now.Date).Days.ToString(); }
+        public int DaysUntilExpiration { get => ExpirationDate.Subtract(DateTime.Now.Date).Days; }
     }
 
 }

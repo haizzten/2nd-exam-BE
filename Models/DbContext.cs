@@ -8,8 +8,8 @@ namespace MyExam.Models
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Agreement>().ToTable("Agreement");
+            modelBuilder.Entity<AgreementModel>().ToTable("Agreement");
         }
-        public DbSet<Agreement> Agreements { get; set; }
+        public DbSet<AgreementModel> Agreements { get; set; }
     }
 }
