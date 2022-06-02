@@ -1,9 +1,10 @@
+using MyExam.Models;
 namespace MyExam.Agreement
 {
     public class FilterSortModel
     {
-        FilterModel[] filterModelList { get; set; }
-        SortModel sortModel { get; set; }
+        public List<FilterModel> filterModelList { get; set; }
+        public SortModel sortModel { get; set; }
     }
     public class FilterModel
     {
@@ -14,12 +15,17 @@ namespace MyExam.Agreement
     }
     public class SortModel
     {
-        public string sortColumn { get; set; }
-        public string sortType { get; set; }
+        public string sortColumn { get; set; } = "Status";
+        public string sortType { get; set; } = "acsending";
     }
     public class PagingModel
     {
         public int start { get; set; } = 0;
         public int end { get; set; } = 50;
+    }
+    public class AgreementDTO
+    {
+        public List<AgreementModel> agreementList { get; set; }
+        public int lastIndex { get; set; }
     }
 }

@@ -15,9 +15,7 @@ namespace MyExam.Models
         public DateTime EffectiveDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public DateTime CreatedDate { get; set; }
-
-        [NotMapped]
-        public int DaysUntilExpiration { get => ExpirationDate.Subtract(DateTime.Now.Date).Days; }
+        public int? DaysUntilExpiration { get; set; }
     }
 
 }
