@@ -6,7 +6,7 @@ namespace MyExam.Models
     public class AgreementModel
     {
         [Key]
-        public string ID { get; set; }
+        public string? ID { get; set; }
         public string Status { get; set; }
         public string QuoteNumber { get; set; }
         public string AgreementName { get; set; }

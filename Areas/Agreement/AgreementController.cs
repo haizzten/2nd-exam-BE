@@ -31,7 +31,7 @@ namespace MyExam.Agreement
                 return;
             }
             var records = SeedHelper.SeedData<AgreementModel>("SeedingData.json");
-            // var createdDay = new TimeSpan((records[0].ExpirationDate - records[0].CreatedDate).Ticks).Days;
+            // var Days = new TimeSpan((records[0].ExpirationDate - records[0].CreatedDate).Ticks).Days;
             records.ForEach(record => record.DaysUntilExpiration = new TimeSpan((record.ExpirationDate - record.CreatedDate).Ticks).Days);
             context.AddRange(records);
             context.SaveChanges();
@@ -132,12 +132,15 @@ namespace MyExam.Agreement
         [HttpPost]
         public async Task<ActionResult<AgreementModel>> PostAgreement(AgreementModel agreement)
         {
+
             if (context.Agreements == null)
             {
                 return Problem("Entity set 'MyDbContext.Agreements' is null.");
             }
 
+            string ID = Guid.NewGuid().ToString();
             agreement.DaysUntilExpiration = agreement.ExpirationDate.Day - agreement.CreatedDate.Day;
+            agreement.ID = ID;
 
             context.Agreements.Add(agreement);
             try
@@ -323,19 +326,6 @@ namespace MyExam.Agreement
             return (context.Agreements?.Any(e => e.ID == id)).GetValueOrDefault();
         }
 
-        private void SwitchCase(string filterType)
-        {
-            switch (filterType)
-            {
-                case "date":
-                    //Contains
-                    break;
-                case "text":
-                    //Equal
-                    break;
-            }
-
-        }
 
     }
 

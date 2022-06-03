@@ -266,3 +266,4 @@ C:\Users\dell\Documents\Folder 4 text\2nd exam BE\obj\Debug\net6.0\refint\2nd ex
 C:\Users\dell\Documents\Folder 4 text\2nd exam BE\obj\Debug\net6.0\2nd exam BE.pdb
 C:\Users\dell\Documents\Folder 4 text\2nd exam BE\obj\Debug\net6.0\2nd exam BE.genruntimeconfig.cache
 C:\Users\dell\Documents\Folder 4 text\2nd exam BE\obj\Debug\net6.0\ref\2nd exam BE.dll
+C:\Users\dell\Documents\Folder 4 text\2nd exam BE\bin\Debug\net6.0\package-lock.json
